@@ -1,0 +1,161 @@
+{
+  "entries": 440843,
+  "with_us_ipa": 124987,
+  "with_chinese": 399213,
+  "with_both": 83357,
+  "policy": "Exact lowercase ASCII single words, internal apostrophe/hyphen. No lemma inference or IPA generation.",
+  "pins": {
+    "open-dict-data/ipa-dict": "43c3570eb3553bdd19fccd2bd0091534889af023",
+    "skywind3000/ECDICT": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+    "lingz/cmudict-ipa": "629483e9a7fa5b9ff11bb83e3fda6dcc25c5c511",
+    "cmusphinx/cmudict": "74790861f652b15e4ac49015a90074ad62a27690",
+    "kylebgorman/syllabify": "d816db784436e9de87ec1ef9bd11b8e229853710"
+  },
+  "upstream_sha256": {
+    "cmusphinx--cmudict--LICENSE": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a",
+    "cmusphinx--cmudict--README": "00c34e7564f1f6a68de02e12c123d801471da92bc3091f7d89b605f238bf8554",
+    "kylebgorman--syllabify--README.md": "b580a3d24ddad590eaedf374e58bb9b0f16caaf75312779fb88530f78fc96311",
+    "kylebgorman--syllabify--syllabify.py": "a9b35ed0bf2c1ef0b51396e9f6eb000904095b6cbac728f17dad6ad7663a96d6",
+    "lingz--cmudict-ipa--LICENSE": "a504bede5a50d1ac19c38984d9bb33371927f72e714946a963bf40bb2de21188",
+    "lingz--cmudict-ipa--README.md": "bc447f87febaec760ffd2137de84c7492b836c038b7edab7ca384d8708585260",
+    "open-dict-data--ipa-dict--LICENSE": "2c6a7e4c71f834a8fc0114fa4f65ca85e80bc4b4dc7ed08746963a09a7b0d177",
+    "open-dict-data--ipa-dict--README.md": "7251a8159f6d1d1a981ae5e79e616e3c7181950c1b6023042a727056a47e87a0",
+    "open-dict-data--ipa-dict--data--en_US.txt": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+    "pins.json": "ce0c4a6871907d5e67a7344a11807769eb3f6112a61d88aa089d92f8f30c53bf",
+    "skywind3000--ECDICT--LICENSE": "f8552dd246f61a4e064569eae6194a01c6b3d63b03bf27c6ca863593c549ed0f",
+    "skywind3000--ECDICT--README.md": "0c3f95fc7e15f7eccf65feedb58ba3ebace1fe7b7cbdd1af60c9ace4cef9094b",
+    "skywind3000--ECDICT--ecdict.csv": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf"
+  },
+  "shards": {
+    "a.json": {
+      "sha256": "7c94f1f1a224293517dc4588c0768f979405ddb2e840498ecbe1efab03ee600f",
+      "entries": 31739,
+      "bytes": 1857782
+    },
+    "b.json": {
+      "sha256": "2fe8efcdc4fb674a63834340f0575b3da5a4d56d4ca5ed290f7a02c2bce6ae16",
+      "entries": 26136,
+      "bytes": 1538399
+    },
+    "c.json": {
+      "sha256": "bf34e1572d7d020de221ece7fdb92a95480d532e89cb22eba1e6be8b2075d22a",
+      "entries": 37975,
+      "bytes": 2270044
+    },
+    "d.json": {
+      "sha256": "cdfc784bd9af5aea517ef21d5bb111e17c03eec602aab39b9521687a46fbb0fc",
+      "entries": 23471,
+      "bytes": 1380849
+    },
+    "e.json": {
+      "sha256": "4227df6789b8d05a3b26589131a1813893ed47afe6dbf96db8890ab0583e52bb",
+      "entries": 17031,
+      "bytes": 1015007
+    },
+    "f.json": {
+      "sha256": "60788e8970a9ce61d84409ba3fa3b0e26100d4d75293465be5ce2b26a8a647f3",
+      "entries": 15021,
+      "bytes": 907056
+    },
+    "g.json": {
+      "sha256": "cd42aec3d7e7bbbe1cb8b07da18e5d016412a1c1a9ee12eab3146dd627f560ad",
+      "entries": 15250,
+      "bytes": 877071
+    },
+    "h.json": {
+      "sha256": "45e19e17506b069c9d64abc950f76b4d181d83c6f0e63ef00554819d866640f5",
+      "entries": 21008,
+      "bytes": 1173306
+    },
+    "i.json": {
+      "sha256": "216a53a15fa21c3915440102d182352c7eb026bd90928042708521d7eee2255b",
+      "entries": 13488,
+      "bytes": 862767
+    },
+    "j.json": {
+      "sha256": "c42ceab77fa2e5ccd8c80648189a63f6cf1c51d62ab042bd6d6bdfe2de76086b",
+      "entries": 3801,
+      "bytes": 228340
+    },
+    "k.json": {
+      "sha256": "25d11db0d25e2488d3782037d22bf434d2157a58ddd5c1048a857ec0d6df9eb2",
+      "entries": 8699,
+      "bytes": 443732
+    },
+    "l.json": {
+      "sha256": "61d36af024948aeeb76504a644594436096fee175c20215e5bd2d1ba6e36dcd9",
+      "entries": 15499,
+      "bytes": 867941
+    },
+    "m.json": {
+      "sha256": "8c5f09eba5e56aff3f824e0837183d89ef4c98c862ad0a93ac8c9cbaf57016ec",
+      "entries": 30376,
+      "bytes": 1724224
+    },
+    "n.json": {
+      "sha256": "da411a0bb6062dd66a086b380eafc027c6ecab9686eba0858b03480d511e7f04",
+      "entries": 13041,
+      "bytes": 741974
+    },
+    "o.json": {
+      "sha256": "d4bd3d20df8a7f513177f29e3d63e4a37cb4025848a11458900ae858833874fb",
+      "entries": 12102,
+      "bytes": 705488
+    },
+    "p.json": {
+      "sha256": "36c74871bd7ba77942fdfb4828079c2f5050d7b4e90538b2d777857c103ce196",
+      "entries": 38072,
+      "bytes": 2192814
+    },
+    "q.json": {
+      "sha256": "a32504675a1900150d04d5aba41c1a93eee7b1cebdcf2783ed3984445fcc9622",
+      "entries": 1917,
+      "bytes": 117054
+    },
+    "r.json": {
+      "sha256": "160861c2627b2e2f7ae93f2bdcd58d36e08d8027bef7856511edecbbcf1f69e0",
+      "entries": 19089,
+      "bytes": 1208297
+    },
+    "s.json": {
+      "sha256": "5212a57c14ef4ff3734e7ef1f20b40fee2aea62274e6ffe34798e58d5e269bbe",
+      "entries": 44529,
+      "bytes": 2628336
+    },
+    "t.json": {
+      "sha256": "c36a27c6b2700df4fac11e144a72419e6c96ff81bd9c60e8e055f68ca565438e",
+      "entries": 22901,
+      "bytes": 1325989
+    },
+    "u.json": {
+      "sha256": "34753915c392f09246a1d5166969cb55a12a3d6b17342f0658cbd26a2829c46a",
+      "entries": 8723,
+      "bytes": 540512
+    },
+    "v.json": {
+      "sha256": "f6b63d77e38e6c73015f7f86d13f619d48672a08eb5ccf17085e67291a503dcd",
+      "entries": 6923,
+      "bytes": 397672
+    },
+    "w.json": {
+      "sha256": "54d1e871c4677fab710c69c84373f1d178eb1444636f1385be04dc343e83a1b8",
+      "entries": 9122,
+      "bytes": 566351
+    },
+    "x.json": {
+      "sha256": "a600d40940ae506bc2a5327b3a83e999ff7f2b7a7e8068df95592ec59dd51492",
+      "entries": 831,
+      "bytes": 43490
+    },
+    "y.json": {
+      "sha256": "24e44fb55486513bbc170974d90986609a7a4dd70dfcdfeb92ab9abde438ad9a",
+      "entries": 1755,
+      "bytes": 99705
+    },
+    "z.json": {
+      "sha256": "8fd045ab2cd672d6de1f1614fe1c4ee66fadfa4fdb14c555e22bd3fc20a0ab5f",
+      "entries": 2344,
+      "bytes": 120883
+    }
+  }
+}

@@ -1,0 +1,160 @@
+[
+  {
+    "sha": "29864687312c0294e5cb12636933b57b5921cb8c",
+    "node_id": "C_kwDOBRoCxNoAKDI5ODY0Njg3MzEyYzAyOTRlNWNiMTI2MzY5MzNiNTdiNTkyMWNiOGM",
+    "commit": {
+      "author": {
+        "name": "JasonnnW3000",
+        "email": "sufssl04@gmail.com",
+        "date": "2025-01-01T18:12:53Z"
+      },
+      "committer": {
+        "name": "JasonnnW3000",
+        "email": "sufssl04@gmail.com",
+        "date": "2025-01-01T18:12:53Z"
+      },
+      "message": "Update LICENSE, fix license year\n\nSigned-off-by: JasonnnW3000 <sufssl04@gmail.com>",
+      "tree": {
+        "sha": "0433f0bccd2b4356260ecca2c964f983a80c6667",
+        "url": "https://api.github.com/repos/skywind3000/ECDICT/git/trees/0433f0bccd2b4356260ecca2c964f983a80c6667"
+      },
+      "url": "https://api.github.com/repos/skywind3000/ECDICT/git/commits/29864687312c0294e5cb12636933b57b5921cb8c",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQIzBAABCgAdFiEEUcr96BhzytfcMnC7rdjHf2KB9jgFAmd1haUACgkQrdjHf2KB\n9jjQmRAAjw12JXroO9TCYQWSSg0eR+dQW2/2mRyKivsIGPt7G4eJZf+Tg3NjkTlS\n47cg9ZQ3EaQb/KPsBr3QEprpPQASTQNRZrI/xJvQKwHiPkhQpP+y/WhaqVTdRdev\nsbe1NLhKxlj+UZIrJnborcSzfOEwPIPn9i6BIFmk++zjBEJKOiwnGgafYxek+Kz1\n3Qum+zbHhs9ujx85H3yiua1upYY9iMwxQSq9qCkkEpXEcZwfpzLfbkDR4XM1iDAs\n1ml5t1Nl+JoVCCtja+qi6XyGmGtHr1N1fhMoRd65yiid/FBdKR1t4HXKvVY0mrKH\n5kzyD5zWUq9bA2UsdOtafi3jejx/rMav3qHIF5N1eCka3fVAHtSqEbTpc6I1HTnG\n5EsErwe38qCo0oummYVrG2eTW7v+5IPAACNv04XLTw7Ao+xr+8xq3PYaDUkfkwiH\n6NtsX84vt1HWKG/fnn7Pcnj0fz3lOs6roaaByZxRFuSsqoSHMOBK2C4ZeWm2KCGF\nNkGZ4ex87d2USILgIosVXBV9qkDCqi9dul2EWosKg5qQEFe7zaChnqEL0oAygg8S\ndb4+DUeLuDyJ6Kx/9PpW4vOpvJX1cr7bpVBloGdLPpo2hSY0vq+gZ1Xdj+K/sABe\nkPtnWUAyc5O7djk75U4blmomX9qVe5KRCz2HZ2mXPXt2c36t4l8=\n=1RiI\n-----END PGP SIGNATURE-----",
+        "payload": "tree 0433f0bccd2b4356260ecca2c964f983a80c6667\nparent 57072f4f531a954b7a89e820183aa368080282d0\nauthor JasonnnW3000 <sufssl04@gmail.com> 1735755173 -0500\ncommitter JasonnnW3000 <sufssl04@gmail.com> 1735755173 -0500\n\nUpdate LICENSE, fix license year\n\nSigned-off-by: JasonnnW3000 <sufssl04@gmail.com>\n",
+        "verified_at": "2025-01-01T18:13:32Z"
+      }
+    },
+    "url": "https://api.github.com/repos/skywind3000/ECDICT/commits/29864687312c0294e5cb12636933b57b5921cb8c",
+    "html_url": "https://github.com/skywind3000/ECDICT/commit/29864687312c0294e5cb12636933b57b5921cb8c",
+    "comments_url": "https://api.github.com/repos/skywind3000/ECDICT/commits/29864687312c0294e5cb12636933b57b5921cb8c/comments",
+    "author": {
+      "login": "JasonnnW3000",
+      "id": 185837594,
+      "node_id": "U_kgDOCxOoGg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/185837594?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/JasonnnW3000",
+      "html_url": "https://github.com/JasonnnW3000",
+      "followers_url": "https://api.github.com/users/JasonnnW3000/followers",
+      "following_url": "https://api.github.com/users/JasonnnW3000/following{/other_user}",
+      "gists_url": "https://api.github.com/users/JasonnnW3000/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/JasonnnW3000/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/JasonnnW3000/subscriptions",
+      "organizations_url": "https://api.github.com/users/JasonnnW3000/orgs",
+      "repos_url": "https://api.github.com/users/JasonnnW3000/repos",
+      "events_url": "https://api.github.com/users/JasonnnW3000/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/JasonnnW3000/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "JasonnnW3000",
+      "id": 185837594,
+      "node_id": "U_kgDOCxOoGg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/185837594?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/JasonnnW3000",
+      "html_url": "https://github.com/JasonnnW3000",
+      "followers_url": "https://api.github.com/users/JasonnnW3000/followers",
+      "following_url": "https://api.github.com/users/JasonnnW3000/following{/other_user}",
+      "gists_url": "https://api.github.com/users/JasonnnW3000/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/JasonnnW3000/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/JasonnnW3000/subscriptions",
+      "organizations_url": "https://api.github.com/users/JasonnnW3000/orgs",
+      "repos_url": "https://api.github.com/users/JasonnnW3000/repos",
+      "events_url": "https://api.github.com/users/JasonnnW3000/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/JasonnnW3000/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "57072f4f531a954b7a89e820183aa368080282d0",
+        "url": "https://api.github.com/repos/skywind3000/ECDICT/commits/57072f4f531a954b7a89e820183aa368080282d0",
+        "html_url": "https://github.com/skywind3000/ECDICT/commit/57072f4f531a954b7a89e820183aa368080282d0"
+      }
+    ]
+  },
+  {
+    "sha": "61e71e9384e45358a905e7d08f9d81d6e7f4cb36",
+    "node_id": "MDY6Q29tbWl0ODU1OTA3MjQ6NjFlNzFlOTM4NGU0NTM1OGE5MDVlN2QwOGY5ZDgxZDZlN2Y0Y2IzNg==",
+    "commit": {
+      "author": {
+        "name": "skywind3000",
+        "email": "skywind3000@gmail.com",
+        "date": "2021-02-12T05:19:22Z"
+      },
+      "committer": {
+        "name": "skywind3000",
+        "email": "skywind3000@gmail.com",
+        "date": "2021-02-12T05:19:22Z"
+      },
+      "message": "remove old commits",
+      "tree": {
+        "sha": "c908ae39683155e01a00908482d0e049ad0a2f90",
+        "url": "https://api.github.com/repos/skywind3000/ECDICT/git/trees/c908ae39683155e01a00908482d0e049ad0a2f90"
+      },
+      "url": "https://api.github.com/repos/skywind3000/ECDICT/git/commits/61e71e9384e45358a905e7d08f9d81d6e7f4cb36",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/skywind3000/ECDICT/commits/61e71e9384e45358a905e7d08f9d81d6e7f4cb36",
+    "html_url": "https://github.com/skywind3000/ECDICT/commit/61e71e9384e45358a905e7d08f9d81d6e7f4cb36",
+    "comments_url": "https://api.github.com/repos/skywind3000/ECDICT/commits/61e71e9384e45358a905e7d08f9d81d6e7f4cb36/comments",
+    "author": {
+      "login": "skywind3000",
+      "id": 3035071,
+      "node_id": "MDQ6VXNlcjMwMzUwNzE=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3035071?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/skywind3000",
+      "html_url": "https://github.com/skywind3000",
+      "followers_url": "https://api.github.com/users/skywind3000/followers",
+      "following_url": "https://api.github.com/users/skywind3000/following{/other_user}",
+      "gists_url": "https://api.github.com/users/skywind3000/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/skywind3000/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/skywind3000/subscriptions",
+      "organizations_url": "https://api.github.com/users/skywind3000/orgs",
+      "repos_url": "https://api.github.com/users/skywind3000/repos",
+      "events_url": "https://api.github.com/users/skywind3000/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/skywind3000/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "skywind3000",
+      "id": 3035071,
+      "node_id": "MDQ6VXNlcjMwMzUwNzE=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3035071?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/skywind3000",
+      "html_url": "https://github.com/skywind3000",
+      "followers_url": "https://api.github.com/users/skywind3000/followers",
+      "following_url": "https://api.github.com/users/skywind3000/following{/other_user}",
+      "gists_url": "https://api.github.com/users/skywind3000/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/skywind3000/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/skywind3000/subscriptions",
+      "organizations_url": "https://api.github.com/users/skywind3000/orgs",
+      "repos_url": "https://api.github.com/users/skywind3000/repos",
+      "events_url": "https://api.github.com/users/skywind3000/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/skywind3000/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": []
+  }
+]

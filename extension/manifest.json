@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "顺手读 · 美式音标与中文",
+  "version": "4.0",
+  "description": "在当前阅读页悬停英文单词，离线显示美式 IPA 与中文释义。",
+  "minimum_chrome_version": "110",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "顺手读：启用当前阅读页",
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+D",
+        "mac": "Alt+Shift+D"
+      }
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'self'"
+  },
+  "version_name": "4.0"
+}
