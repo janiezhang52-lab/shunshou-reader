@@ -1,5 +1,7 @@
 # 顺手读 4.0
 
+作者：[宁宁 · @janiezhang52-lab](https://github.com/janiezhang52-lab)。源码公开；原创程序采用专用许可，第三方词库独立保留原许可。
+
 读英文网页时，把鼠标停在单词上，就能看到美式 IPA 音标和中文释义。适合想少切换页面、顺手读英文的人。
 
 查词在本机离线完成，不需要付费 API、账号或密钥。每个网页由你主动启用，刷新或打开新页面后重新启用。
@@ -10,7 +12,7 @@
 
 ## 安装与第一次使用
 
-1. 下载发布附件 `shunshou-reader-4.0-extension.zip`，解压，并保留解压后的文件夹。准备发布期间远程下载地址尚未生成。
+1. 下载 [4.0 扩展包](https://github.com/janiezhang52-lab/shunshou-reader/releases/download/v4.0/shunshou-reader-4.0-extension.zip)，解压，并保留解压后的文件夹。
 2. 在 Chrome 地址栏打开 `chrome://extensions/`，开启右上角“开发者模式”。这是加载本地扩展所需的操作，不需要修改其他安全设置。
 3. 点击“加载已解压的扩展程序”（部分版本显示“加载未打包的扩展程序”），选择解压后的 `extension` 文件夹。
 4. 打开要阅读的英文网页，点击工具栏里的“顺手读”，启用当前页。找不到图标时，可以先在拼图形状的扩展菜单中固定它。
@@ -56,6 +58,6 @@ ECDICT 维护者明确允许数据库按 MIT 用于商业软件及随安装包�
 
 本版通过 8 项查词测试、16 项浏览器流程与隐私检查，以及真实 Academy 页面验证，共 17 项浏览器检查通过。测试覆盖首次/重复悬停、标点和词边界、敏感输入避让、缺词、加载失败重试及 courses 补充。ChatGPT Learn 未找到可悬停公开文本，未记为通过。
 
-发布附件包含扩展包、完整源码包及 SHA-256 校验文件。Mac 可在附件所在目录执行 `shasum -a 256 -c SHA256SUMS-4.0.txt` 校验。需要源码时使用 `shunshou-reader-4.0-source.zip`。
+[4.0 下载页面](https://github.com/janiezhang52-lab/shunshou-reader/releases/tag/v4.0)包含扩展包、[完整源码包](https://github.com/janiezhang52-lab/shunshou-reader/releases/download/v4.0/shunshou-reader-4.0-source.zip)及[SHA-256 校验文件](https://github.com/janiezhang52-lab/shunshou-reader/releases/download/v4.0/SHA256SUMS-4.0.txt)。Mac 可在附件所在目录执行 `shasum -a 256 -c SHA256SUMS-4.0.txt` 校验。需要源码时使用 `shunshou-reader-4.0-source.zip`。
 
 可复现命令：`npm test`；`python3 scripts/build_data.py`；`python3 scripts/package.py`。浏览器测试需要 Playwright Core 1.58.2 和兼容的 Chromium：`npm run test:browser`。测试使用独立浏览器和临时测试站点权限，不扩大生产清单权限；细节见 [验证说明](TEST-REPORT.md)。

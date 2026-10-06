@@ -9,6 +9,6 @@
 
 首次使用：解压扩展附件 → Chrome扩展页开启开发者模式 → 加载extension文件夹 → 打开英文网页 → 点击顺手读启用当前页。刷新后需重新启用。
 
-附件：shunshou-reader-4.0-extension.zip、shunshou-reader-4.0-source.zip、SHA256SUMS-4.0.txt。当前是本地待审阅发布资料，尚无远程下载链接。
+附件：shunshou-reader-4.0-extension.zip、shunshou-reader-4.0-source.zip、SHA256SUMS-4.0.txt。作者：[宁宁 · @janiezhang52-lab](https://github.com/janiezhang52-lab)。原创程序专用限制许可，不是MIT开源项目；词库保留其MIT等许可。
 
 已知限制：不按上下文选义，词库可能有错误或缺词；Chrome内部页、图片文字、部分PDF和跨域iframe不支持。没有公开商店发布。
