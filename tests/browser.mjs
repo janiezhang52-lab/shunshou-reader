@@ -65,10 +65,10 @@ try {
   const extension=path.join(temporary,'extension');
   await cp(path.join(root,'extension'),extension,{recursive:true});
   const manifest=JSON.parse(await readFile(path.join(extension,'manifest.json')));
-  manifest.host_permissions=['http://127.0.0.1/*','https://academy.openai.com/*','https://chatgpt.com/*'];
+  manifest.host_permissions=['http://127.0.0.1/*'];
   await writeFile(path.join(extension,'manifest.json'),JSON.stringify(manifest));
   context=await chromium.launchPersistentContext(path.join(temporary,'profile'),{
-    channel:'chromium',headless:true,chromiumSandbox:true,viewport:{width:1200,height:900},
+    channel:'chromium',executablePath:process.env.CHROME_EXECUTABLE_PATH,headless:true,chromiumSandbox:true,viewport:{width:1200,height:900},
     ignoreDefaultArgs:['--disable-extensions','--unsafely-disable-devtools-self-xss-warnings'],
     args:[`--disable-extensions-except=${extension}`,`--load-extension=${extension}`]
   });
@@ -86,14 +86,26 @@ try {
     chrome.runtime.onMessage.addListener(message=>{if(message.type==='hover-reader:lookup')testMessages.push(message);return false;});
   });
   async function tabID(url) {return worker.evaluate(async url=>(await chrome.tabs.query({})).find(t=>t.url===url)?.id,url);}
-  async function enable(page) {
+  async function setEnabled(page, enabled) {
     const tabId=await tabID(page.url());
-    await worker.evaluate(async tabId=>{
-      await chrome.scripting.executeScript({target:{tabId},files:['core.js','content.js']});
-      await chrome.tabs.sendMessage(tabId,{type:'hover-reader:enable',enabled:true});
-    },tabId);
+    const popup=await context.newPage();
+    await popup.addInitScript(target=>{chrome.tabs.query=async()=>[{id:target,url:'http://127.0.0.1/'}];},tabId);
+    try {
+      await popup.goto(`chrome-extension://${id}/popup.html`);
+      const button=popup.locator('#toggle');
+      await button.waitFor({state:'visible'});
+      await popup.waitForFunction(()=>!document.querySelector('#toggle').disabled);
+      const alreadyEnabled=(await button.textContent())==='暂停当前页';
+      if (alreadyEnabled!==enabled) {
+        await button.click();
+        await popup.waitForFunction(()=>!document.querySelector('#toggle').disabled);
+        assert.equal(await button.textContent(),enabled?'暂停当前页':'启用当前页');
+        assert.doesNotMatch(await popup.locator('#status').textContent(),/无法启用/);
+      }
+    } finally { await popup.close(); await page.bringToFront(); }
     return tabId;
   }
+  const enable=page=>setEnabled(page,true);
   const page=await context.newPage();page.on('pageerror',e=>errors.push(String(e)));
   await page.goto(fixtureURL); const baseline=await page.locator('#ordinary').boundingBox();
   await enable(page);
@@ -139,11 +151,15 @@ try {
     await hoverText(page,'#punctuation','zzzxnonexistentword');const state=await waitCard(page,/词库未收录/);
     assert.match(state.text,/美式 IPA：词库未收录/);assert.match(state.text,/中文释义：词库未收录/);
   });
-  await check('Unicode, numbers, email fragments, editable text, form and ARIA textbox are ignored',async()=>{
-    for(const [selector,word] of [['#punctuation','café'],['#punctuation','test123'],['#punctuation','first'],['#sensitive','academy'],['#label','academy'],['#role','academy']]) {
+  await check('Unicode, numbers, email fragments, editable text and ARIA textbox are ignored',async()=>{
+    for(const [selector,word] of [['#punctuation','café'],['#punctuation','test123'],['#punctuation','first'],['#sensitive','academy'],['#role','academy']]) {
       await hoverText(page,selector,word);await sleep(450);assert.equal((await cardState(page)).visible,false,selector+':'+word);
     }
     await page.locator('input').hover();await sleep(450);assert.equal((await cardState(page)).visible,false);
+  });
+  await check('read-only form instructions remain readable while fields are excluded',async()=>{
+    await hoverText(page,'#label','academy');await waitCard(page,/学院/);
+    await page.locator('textarea').hover();await sleep(450);assert.equal((await cardState(page)).visible,false);
   });
   await check('viewport edge placement stays on screen',async()=>{
     await hoverText(page,'#edge','academy');const state=await waitCard(page,/学院/);
@@ -171,7 +187,7 @@ try {
   await check('reinjection and pause/resume never create duplicate overlays',async()=>{
     const tabId=await enable(page);await enable(page);
     assert.equal(await page.locator('[data-hover-reader-overlay]').count(),1);
-    await worker.evaluate(tabId=>chrome.tabs.sendMessage(tabId,{type:'hover-reader:enable',enabled:false}),tabId);
+    await setEnabled(page,false);
     await hoverText(page,'#academy','academy');await sleep(450);assert.equal((await cardState(page)).visible,false);
     await enable(page);await page.mouse.move(15,15);await hoverText(page,'#academy','academy');await waitCard(page,/学院/);
   });
@@ -183,6 +199,7 @@ try {
     await popup.goto(`chrome-extension://${id}/popup.html`);
     await popup.getByRole('button',{name:'暂停当前页'}).click();
     await popup.getByRole('button',{name:'启用当前页'}).click();
+    await popup.waitForFunction(()=>!document.querySelector('#toggle').disabled && document.querySelector('#toggle').textContent==='暂停当前页');
     assert.match(await popup.locator('#status').textContent(),/已启用/);
     await popup.screenshot({path:path.join(evidenceRoot,'popup.png')});await popup.close();
   });
@@ -202,36 +219,7 @@ try {
     assert.ok(traffic.fetches.every(u=>u.startsWith(`chrome-extension://${id}/data/`)));
     await writeFile(path.join(evidenceRoot,'lookup-traffic.json'),JSON.stringify(traffic,null,2));
   });
-  for(const [name,url,word] of [['Academy','https://academy.openai.com/','Learning'],['ChatGPT Learn','https://chatgpt.com/learn','ChatGPT']]) {
-    const real=await context.newPage();
-    try {
-      await real.goto(url,{waitUntil:'domcontentloaded',timeout:30000});await sleep(1000);
-      await enable(real);
-      // Public visible text only; no authentication or user browsing context.
-      const point=await real.evaluate(()=>{
-        const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
-        while(walker.nextNode()) {
-          const n=walker.currentNode, parent=n.parentElement;
-          if(parent.closest('script,style,form,[contenteditable],button'))continue;
-          const match=/\b(academy|learn|learning|explore|resources|welcome|chatgpt|discover|understand)\b/i.exec(n.textContent);
-          if(!match)continue;
-          const r=document.createRange();r.setStart(n,match.index);r.setEnd(n,match.index+match[0].length);
-          const b=r.getBoundingClientRect(),x=b.left+b.width/2,y=b.top+b.height/2;
-          if(b.width&&x>0&&y>0&&x<innerWidth&&y<innerHeight&&getComputedStyle(parent).visibility!=='hidden')return{x,y,word:match[0]};
-        }
-        return null;
-      });
-      if(!point)throw Error('No visible word geometry');
-      await real.mouse.move(point.x,point.y);const state=await waitCard(real,/美式/);
-      await real.screenshot({path:path.join(evidenceRoot,`real-${name==='Academy'?'academy':'learn'}.png`)});
-      results.push({name:`real public ${name} page`,status:'passed',url:real.url(),title:await real.title(),hover:state.text});
-      console.log('PASS real page',name,point.word);
-    } catch(e) {
-      await real.screenshot({path:path.join(evidenceRoot,`blocked-${name==='Academy'?'academy':'learn'}.png`)}).catch(()=>{});
-      results.push({name:`real public ${name} page`,status:'blocked',url:real.url(),reason:String(e)});console.log('BLOCKED real page',name,String(e));
-    }
-    finally {await real.close();}
-  }
+  // Live content pages are verified separately through the actual Chrome toolbar.
   assert.deepEqual(errors,[]);
 } catch(e) {console.error(e);process.exitCode=1;}
 finally {

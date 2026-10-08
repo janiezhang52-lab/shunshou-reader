@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>顺手读兼容性回归：完整阅读页</title>
+<style>
+  body { font: 24px/1.5 Arial, sans-serif; margin: 28px; color:#243e36; background:#fbfdfc; }
+  p { margin: 12px 0; } iframe { display:block; width:1100px; height:420px; border:1px solid #aaa; }
+  input,textarea { font:24px Arial; width:300px; }
+  dialog { width:540px; height:250px; padding:30px; }
+  #shadow { padding:10px; border:1px solid #ccc; }
+</style>
+<p id="ordinary"><span id="academy">academy</span> <span id="learn">learn</span> <span id="quokka">quokka</span></p>
+<iframe id="primary" name="primary" src="/child"></iframe>
+<form><p>Static form description: <span id="formword">academy</span></p><label>Public label: <span id="labelword">course</span><input id="password" type="password" value="academy"></label></form>
+<pre id="preword">academy</pre>
+<code id="codeword">course</code>
+<p id="split">aca<strong>de</strong>my</p>
+<div id="shadow"></div>
+<div id="closed"></div>
+<p><input id="input" value="academy"></p><p><textarea id="textarea">academy</textarea></p>
+<p id="editable" contenteditable="true">academy</p>
+<p id="ariaedit" role="textbox">academy</p>
+<dialog id="modal"><p>Modal lesson: <span id="modalword">knowledge</span></p><button id="closemodal">Close</button></dialog>
+<script>
+ const root=document.querySelector('#shadow').attachShadow({mode:'open'});
+ root.innerHTML='<p>Shadow lesson: <span id="shadowword">academy</span></p><div contenteditable="true"><span id="shadoweditable">academy</span></div>';
+ const closed=document.querySelector('#closed').attachShadow({mode:'closed'});
+ closed.innerHTML='<p>Closed shadow lesson: <span id=closedword>academy</span></p><input id=closedinput value=academy><p role=textbox><span id=closededitable>academy</span></p>';
+ window.compatibilityClosedFixture={word:closed.querySelector('#closedword'),input:closed.querySelector('#closedinput'),editable:closed.querySelector('#closededitable')};
+ document.querySelector('#closemodal').onclick=()=>document.querySelector('#modal').close();
+</script>
