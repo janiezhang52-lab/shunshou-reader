@@ -1,13 +1,13 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>顺手读 · 词库与隐私</title>
 <style>body{max-width:760px;margin:60px auto;padding:0 24px;font:16px/1.8 system-ui;color:#264738;background:#fafcfb}h1{font-size:32px}h2{margin-top:36px;font-size:20px}a{color:#237958}code{background:#eaf1ed;padding:2px 5px;border-radius:4px}small{color:#657c70}</style></head><body>
-<h1>顺手读 · 词库与隐私</h1><p>4.0，完整词库发布候选。词典义帮助阅读，不根据句子选择含义。</p>
+<h1>顺手读 · 词库与隐私</h1><p>4.1，网页兼容性更新。词典义帮助阅读，不根据句子选择含义。</p>
 <h2>美式 IPA</h2><p>直接读取 <a href="https://github.com/open-dict-data/ipa-dict">ipa-dict</a> 的 <code>data/en_US.txt</code>。上游明确将 en_US 标为 General American（通用美式），基于 CMU 发音词典，经 cmudict-ipa 与 syllabify 整理。本扩展不转换或推算音标，原样保留上游的重音和多种读法；不把 ECDICT 未标地区的音标当作美式音标。</p>
 <p>上游本身使用过半自动转换，并非每个词都由语音专家人工复核；宽式音标可能有误差。同形词的多种读音不按词义配对。美式 IPA 不等于所有美国地区的实际发音。</p>
 <h2>中文释义</h2><p>直接读取 <a href="https://github.com/skywind3000/ECDICT">ECDICT</a> 的 <code>translation</code> 字段，不使用在线翻译。它是社区整理的词典，释义可能陈旧、存在错字，专业 AI 用法可能缺失。没有词条就显示“词库未收录”，不以猜测补全。</p>
 <h2>覆盖与许可</h2><p>本包含 440,843 个单词形态，其中 124,987 个有美式 IPA，399,213 个有中文，83,357 个同时具备两者。只保留单个 ASCII 英文词和含内部撇号/连字符的词，忽略大小写，弯撇号按直撇号查找。没有词干推断，因此新词、品牌名、缩写、部分复数和术语会缺失。</p>
-<p>ECDICT 与 IPA 的第三方许可原文保存在 licenses/。ECDICT 维护者已明确确认数据库按 MIT 使用及随安装包离线分发，依据见 ECDICT-AUTHORIZATION.md。未独立核清全部历史素材的逐词权利链。原创代码适用专用个人使用与原样免费分享许可，不能限制第三方数据既有的 MIT 权利。此候选未公开发布或替换现有安装。</p>
-<h2>页面权限与数据</h2><p>仅申请 <code>activeTab</code> 与 <code>scripting</code>，用户在扩展弹窗点“启用当前页”后，对当前页注入悬停脚本。脚本按鼠标位置在本地识别一个单词，扩展内部消息只有该单词。所有查词读取扩展自带 JSON；没有网络查词、账户、API 密钥、遥测、历史/剪贴板权限，也不保存查词记录。</p>
-<p>词条缓存在内存，最多缓存 256 个查询结果；后台最多保留 4 个字母分片。关页或浏览器回收扩展进程后缓存消失。浮层插入一个独立节点，不改原文本或排版。输入框、密码框、表单、可编辑区域、ARIA 文本输入区域、代码块不取词。</p>
-<h2>使用边界</h2><p>刷新和新标签页需重新启用。只处理顶层普通 HTML 页面；Chrome 内部页、商店页、PDF、图片文字、Canvas、跨域 iframe 和封闭 Shadow DOM 不支持。为避免拖慢长文，一个文本块最多检查 500 个文本节点或约 20,000 个字符。</p>
+<p>ECDICT 与 IPA 的第三方许可原文保存在 licenses/。ECDICT 维护者已明确确认数据库按 MIT 使用及随安装包离线分发，依据见 ECDICT-AUTHORIZATION.md。未独立核清全部历史素材的逐词权利链。原创代码适用专用个人使用与原样免费分享许可，不能限制第三方数据既有的 MIT 权利。本版的具体网页与场景验收结果见随包 TEST-REPORT.md。</p>
+<h2>页面权限与数据</h2><p>仅申请 <code>activeTab</code> 与 <code>scripting</code>，用户在扩展弹窗点“启用当前页”后，对当前页注入悬停脚本。脚本按鼠标位置在本地识别一个单词，查词消息只传单个单词；页面之间另有启停和加载协调消息。所有查词读取扩展自带 JSON；没有网络查词、账户、API 密钥、遥测、历史/剪贴板权限，也不保存查词记录。</p>
+<p>词条缓存在内存，最多缓存 256 个查询结果；后台最多保留 4 个字母分片。关页或浏览器回收扩展进程后缓存消失。浮层插入一个独立节点，不改原文本或排版。输入框、密码框、可编辑区域和 ARIA 文本输入区域不取词；普通正文、表单说明和代码块中的英文可查词。</p>
+<h2>使用边界</h2><p>刷新和新标签页需重新启用。处理普通 HTML 正文和当前获授权的内嵌页面，内嵌页面后续加载时补充启用。Chrome 内部页、商店页、内置 PDF 查看器、图片文字及 Canvas 不支持；未获授权的跨域内嵌内容不会自动读取。只查询鼠标附近的可读文字，避免扫描整篇长文。</p>
 <small>固定词库版本和 SHA-256、离线重建脚本、测试报告在项目源代码包内。</small>
 </body></html>

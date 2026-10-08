@@ -1,4 +1,7 @@
-import {Dictionary} from './dictionary.js';
+import {Dictionary, normalizeWord} from './dictionary.js';
+import {FrameCoordinator, sameState} from './frames.js';
+
+const frames = new FrameCoordinator(chrome);
 
 const dictionary = new Dictionary(async letter => {
   const controller = new AbortController();
@@ -11,8 +14,30 @@ const dictionary = new Dictionary(async letter => {
 });
 
 chrome.runtime.onMessage.addListener((message, sender, respond) => {
-  if (message?.type !== 'hover-reader:lookup' || !sender.tab || sender.frameId !== 0) return false;
-  // Content scripts send only a single token, never page text, URL, or history.
-  dictionary.lookup(message.word).then(respond).catch(() => respond({status: 'error'}));
+  if (sender.id !== chrome.runtime.id) return false;
+  let operation;
+  if (message?.type === 'hover-reader:toggle') {
+    // Only the extension's popup may change the main document's authority.
+    if (sender.url !== chrome.runtime.getURL('popup.html')) return false;
+    operation = frames.toggle(message.tabId, message.enabled);
+  } else if (message?.type === 'hover-reader:sync-frames') {
+    operation = (async () => {
+      const state = await frames.ownSenderState(sender);
+      if (!state || state.generation !== message.generation || state.sessionId !== message.sessionId) return {status:'disabled'};
+      const result = await frames.synchronize(sender.tab.id);
+      return result.state ? {...result.state, frames:result.acknowledged} : {status:'disabled'};
+    })();
+  } else if (message?.type === 'hover-reader:lookup') {
+    // Lookup payloads contain one token, never page text, URL, or history.
+    const word = normalizeWord(message.word);
+    if (!word) { respond({status:'invalid'}); return false; }
+    operation = (async () => {
+      const state = await frames.ownSenderState(sender);
+      if (!state) return {status:'disabled'};
+      const result = await dictionary.lookup(word);
+      return sameState(state, await frames.state(sender.tab.id)) ? result : {status:'disabled'};
+    })();
+  } else return false;
+  operation.then(respond).catch(() => respond({status:'error'}));
   return true;
 });

@@ -12,15 +12,14 @@ async function init() {
   tabId = tab?.id;
   if (!tabId || !/^https?:\/\//.test(tab.url || '')) throw Error('Restricted page');
   try {
-    const response = await chrome.tabs.sendMessage(tabId, {type:'hover-reader:status'});
+    const response = await chrome.tabs.sendMessage(tabId, {type:'hover-reader:status'}, {frameId:0});
     update(Boolean(response?.enabled));
   } catch { update(false); }
 }
 button.addEventListener('click', async () => {
   button.disabled = true;
   try {
-    if (!enabled) await chrome.scripting.executeScript({target:{tabId}, files:['core.js', 'content.js']});
-    const result = await chrome.tabs.sendMessage(tabId, {type:'hover-reader:enable', enabled:!enabled});
+    const result = await chrome.runtime.sendMessage({type:'hover-reader:toggle', tabId, enabled:!enabled});
     if (!result || typeof result.enabled !== 'boolean') throw Error('No response');
     update(result.enabled);
   } catch {

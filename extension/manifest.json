@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "顺手读 · 美式音标与中文",
-  "version": "4.0",
+  "version": "4.1",
   "description": "在当前阅读页悬停英文单词，离线显示美式 IPA 与中文释义。",
   "minimum_chrome_version": "110",
   "permissions": [
@@ -27,5 +27,5 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'self'"
   },
-  "version_name": "4.0"
+  "version_name": "4.1"
 }
