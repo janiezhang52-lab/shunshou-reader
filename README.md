@@ -1,5 +1,7 @@
 # 顺手读：让英文阅读和学习一起发生
 
+简体中文 | [English](README.en.md)
+
 用英语学习或工作时，你可以继续读英文原文，遇到不懂的单词，把鼠标停上去，就能看到中文释义和美式音标。
 
 **先启用当前网页，之后逐词悬停即可，不需要点击每个单词。**理解意思，也留意发音，让英文阅读和学习一起发生。
@@ -57,3 +59,7 @@
 [4.1 下载页面](https://github.com/janiezhang52-lab/shunshou-reader/releases/tag/v4.1)提供扩展包、[完整源码包](https://github.com/janiezhang52-lab/shunshou-reader/releases/download/v4.1/shunshou-reader-4.1-source.zip)和 [SHA-256 校验文件](https://github.com/janiezhang52-lab/shunshou-reader/releases/download/v4.1/SHA256SUMS-4.1.txt)。
 
 已安装旧版时，先备份旧文件夹，再替换扩展文件并在 Chrome 扩展管理页点击重新加载；也可停用旧版后加载新的 `extension` 文件夹，避免同页同时启用两个版本。刷新阅读页后重新启用顺手读。
+
+## 更多说明
+
+[版本说明](RELEASE-NOTES.md) · [数据来源](DATA-SOURCES.md) · [授权核查](ECDICT-AUTHORIZATION.md) · [第三方声明](THIRD-PARTY-NOTICES.md) · [中英文覆盖与检查](docs/DOCUMENTATION-COVERAGE.md)
