@@ -1,5 +1,7 @@
 # ECDICT 授权核实
 
+简体中文 | [English](ECDICT-AUTHORIZATION.en.md)
+
 核实日期：2026-10-06。对象：第一版固定使用的 skywind3000/ECDICT 提交 bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b，尤其 ecdict.csv 的 word/translation 字段；不是增强版全部字典、也不是商业网站上其他词典。
 
 ## 结论

@@ -4,7 +4,7 @@
 
 Fixed the missing package-lock.json that caused npm ci to fail in the English source download, the obsolete displayed version 4.1, and the source packaging script which omitted lockfile and English reference/license files. Version 4.2.1 explicitly identifies the extension folder to select. Clean dependency install, 14 unit tests, dictionary regeneration, packaging, and real local-dictionary lookups passed. All 26 shards are included. Actual Load unpacked installation could not be tested because the browser tool blocks chrome://extensions; no workaround was used. Browser-level activation and every website/browser are not certified by these offline checks.
 
-[Download the English preview](https://github.com/janiezhang52-lab/shunshou-reader/releases/tag/v4.2.1-en-preview.1) · [中文项目首页](README.md)
+[Download the English preview](https://github.com/janiezhang52-lab/shunshou-reader/releases/tag/v4.2.1-en-preview.1) · [中文项目首页](README.md) · [English documentation for the original v4.1 Chinese edition](README.en.md)
 
 English interface, American IPA and English-to-English definitions. 229,668 exact word forms; 159,137 with English definitions, 124,987 with IPA, 54,456 with both. 14 unit tests and all 26 data shards checked. The earlier 4.2.0 development checks included 11 browser checks; those browser checks were not rerun in this download audit. Unpack and load the extension folder in a supported Chromium browser.
 

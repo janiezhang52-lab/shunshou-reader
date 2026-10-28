@@ -1,5 +1,7 @@
 # 数据来源和许可
 
+简体中文 | [English](DATA-SOURCES.en.md)
+
 2026-10-05 固定公开快照。完整版本、原文件 SHA-256、每个分片 SHA-256 与精确条数见 `extension/data/metadata.json`；原文件保留在 `upstream/`。构建不联系任何词典 API。
 
 | 内容 | 来源 | 固定 Git commit | 声明 |

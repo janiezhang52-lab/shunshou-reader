@@ -1,6 +1,8 @@
 # 顺手读：让英文阅读和学习一起发生
 
-[English preview / 英文预览版](ENGLISH-PREVIEW.md)
+简体中文 | [English](README.en.md)
+
+本文介绍原版 **v4.1（中文界面与英中释义）**；[English documentation](README.en.md) 是该版本的英文说明。需要英文界面与英英释义，请查看 [v4.2.1 英文运行预览](ENGLISH-PREVIEW.md)及[安装与使用检查](INSTALLATION-CHECK.md)。两版下载包和验收范围不同。
 
 用英语学习或工作时，你可以继续读英文原文，遇到不懂的单词，把鼠标停上去，就能看到中文释义和美式音标。
 
@@ -28,7 +30,7 @@
 
 ## 第一次怎么用
 
-目前提供 Mac Chrome 本地安装版，尚未上架 Chrome 商店。
+原版 v4.1 提供 Mac Chrome 本地安装版，尚未上架 Chrome 商店。
 
 1. 下载 [4.1 扩展包](https://github.com/janiezhang52-lab/shunshou-reader/releases/download/v4.1/shunshou-reader-4.1-extension.zip)，解压并保留文件夹。
 2. 在 Chrome 打开 chrome://extensions/，开启“开发者模式”。
@@ -60,3 +62,6 @@
 
 已安装旧版时，先备份旧文件夹，再替换扩展文件并在 Chrome 扩展管理页点击重新加载；也可停用旧版后加载新的 `extension` 文件夹，避免同页同时启用两个版本。刷新阅读页后重新启用顺手读。
 
+## 更多说明
+
+[版本说明](RELEASE-NOTES.md) · [数据来源](DATA-SOURCES.md) · [授权核查](ECDICT-AUTHORIZATION.md) · [第三方声明](THIRD-PARTY-NOTICES.md) · [中英文覆盖与检查](docs/DOCUMENTATION-COVERAGE.md)
