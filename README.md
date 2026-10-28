@@ -2,6 +2,8 @@
 
 简体中文 | [English](README.en.md)
 
+本文介绍原版 **v4.1（中文界面与英中释义）**；[English documentation](README.en.md) 是该版本的英文说明。需要英文界面与英英释义，请查看 [v4.2.1 英文运行预览](ENGLISH-PREVIEW.md)及[安装与使用检查](INSTALLATION-CHECK.md)。两版下载包和验收范围不同。
+
 用英语学习或工作时，你可以继续读英文原文，遇到不懂的单词，把鼠标停上去，就能看到中文释义和美式音标。
 
 **先启用当前网页，之后逐词悬停即可，不需要点击每个单词。**理解意思，也留意发音，让英文阅读和学习一起发生。
@@ -28,7 +30,7 @@
 
 ## 第一次怎么用
 
-目前提供 Mac Chrome 本地安装版，尚未上架 Chrome 商店。
+原版 v4.1 提供 Mac Chrome 本地安装版，尚未上架 Chrome 商店。
 
 1. 下载 [4.1 扩展包](https://github.com/janiezhang52-lab/shunshou-reader/releases/download/v4.1/shunshou-reader-4.1-extension.zip)，解压并保留文件夹。
 2. 在 Chrome 打开 chrome://extensions/，开启“开发者模式”。

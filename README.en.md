@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | English
 
+**Edition scope:** this is English documentation for the original **v4.1 Chinese-interface, English-to-Chinese edition**. For the **v4.2.1 English-interface, English-to-English preview**, use the [English application preview](ENGLISH-PREVIEW.md) and its [installation and usage check](INSTALLATION-CHECK.md). The packages, dictionary coverage, and validation results are separate.
+
 Keep reading in English. When a word is unfamiliar, hover over it to see Chinese dictionary definitions and American English IPA.
 
 **Enable the current page once, then hover over individual words. There is no need to click each word.**
@@ -28,7 +30,7 @@ Lookup runs locally. The extension does not upload page content, looked-up words
 
 ## Install and start reading
 
-The current distribution is an unpacked extension for Chrome on Mac. It is **not listed in the Chrome Web Store**. The manifest requires Chrome 110 or later; this is a minimum requirement, not a claim that every Chrome version or operating system has been tested.
+The original v4.1 distribution is an unpacked extension for Chrome on Mac. It is **not listed in the Chrome Web Store**. The manifest requires Chrome 110 or later; this is a minimum requirement, not a claim that every Chrome version or operating system has been tested.
 
 1. Download the [v4.1 extension ZIP](https://github.com/janiezhang52-lab/shunshou-reader/releases/download/v4.1/shunshou-reader-4.1-extension.zip), extract it, and keep the extracted folder.
 2. Open `chrome://extensions/` in Chrome and enable **Developer mode**.
